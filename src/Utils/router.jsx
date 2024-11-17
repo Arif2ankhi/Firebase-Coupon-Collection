@@ -5,12 +5,14 @@ import Home from '../components/Home/Home';
 import Brands from '../components/Brands/Brands';
 import MyProfile from '../components/MyProfile/MyProfile';
 import AboutDev from '../components/AboutDev/AboutDev';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
     {
        path: "/",
        element: <MainLayout></MainLayout>,
+       errorElement:<ErrorPage></ErrorPage>,
        children: [
         {
             path: "/",
