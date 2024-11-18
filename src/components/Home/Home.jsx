@@ -33,11 +33,11 @@ console.log(services);
         </section>
         
           <section>
-            <div className="text-3xl font-extrabold justify-center text-center text-red-800 m-12">
-                Brands On Sell
+            <div className="text-3xl font-extrabold justify-center text-center  text-red-800 mt-6 p-4">
+                <button className='btn btn-secondary'> Brands On Sell</button>
             </div>
         </section>
-          <div>
+          <div className='grid gap-6 grid-cols-4'>
             {
                 services.map(service =><ServiceCard  service={service}></ServiceCard>)
             }

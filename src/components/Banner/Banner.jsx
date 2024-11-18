@@ -53,13 +53,15 @@
 
 
 import React from 'react';
+import "./Banner.css"
 
 const Banner = () => {
     return (
-        <div className='w-11/12 mx-auto'>
-            <div className="carousel w-full h-[800px]">
+        <div className='ca mx-auto ml-20 '>
+            <div className="carousel w-full h-[680px]">
+            {/* <div className="carousel  h-[800px]"> */}
                 <div id="slide1" className="carousel-item relative w-full h-full">
-                    <img
+                    <img 
                         src="https://thumbs.dreamstime.com/z/vector-gift-voucher-restaurant-discount-coupon-design-promo-code-certificate-template-online-shopping-marketing-flyer-137273441.jpg?ct=jpeg"
                         className="w-full h-full object-cover"
                     />
