@@ -6,6 +6,7 @@ import Brands from '../components/Brands/Brands';
 import MyProfile from '../components/MyProfile/MyProfile';
 import AboutDev from '../components/AboutDev/AboutDev';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
+import BrandDetails from '../components/BrandDetails/BrandDetails';
 
 
 const router = createBrowserRouter([
@@ -20,8 +21,14 @@ const router = createBrowserRouter([
             loader:() => fetch("/service.json")
         },
         {
+            path:'services/:_id',
+            element:<BrandDetails></BrandDetails>,
+            loader: () => fetch ('/service.json')
+        },
+        {
             path:"/brands",
-            element:<Brands></Brands>
+            element:<Brands></Brands>,
+            loader: () => fetch("/service.json")
         },
         {
             path:"/myProfile",
