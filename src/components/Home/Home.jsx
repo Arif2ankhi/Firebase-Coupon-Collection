@@ -8,8 +8,6 @@ const Home = () => {
   const services = useLoaderData();
   const navigate = useNavigate();
 
-  // console.log(services);
-
   const topRatedBrands = [...services].sort((a, b) => b.rating - a.rating);
 
   return (
@@ -21,7 +19,6 @@ const Home = () => {
         </div>
 
         <Marquee
-          className="animate_animated animate_flip animate_fast animate_infinite"
           pauseOnHover={true}
           speed={300}
         >
@@ -42,7 +39,7 @@ const Home = () => {
       <section>
         <div className="text-3xl font-extrabold justify-center text-center  text-red-800 mt-6 p-8">
           <button className="text-3xl font-extrabold text-center text-red-800 mt-8 mb-8">
-            {" "}
+            {/* {" "} */}
             Brands On Sell
           </button>
         </div>
@@ -66,7 +63,7 @@ const Home = () => {
           Featured Brands
         </h2>
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {services.slice(0, 4).map((service) => (
+          {services.slice(0, 8).map((service) => (
             <ServiceCard key={service._id} service={service} />
           ))}
         </div>

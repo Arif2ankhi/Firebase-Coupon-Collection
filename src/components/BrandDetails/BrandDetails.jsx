@@ -8,7 +8,7 @@ const BrandDetails = () => {
   const data = useLoaderData();
 
   const service = data.find((service) => service._id === _id);
-
+ 
   const {
     _id: currentId,
     brand_logo,

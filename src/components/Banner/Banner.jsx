@@ -57,8 +57,8 @@ import "./Banner.css"
 
 const Banner = () => {
     return (
-        <div className='ca mx-auto ml-20 '>
-            <div className="carousel w-full h-[680px]">
+        <div className='mx-auto'>
+            <div className="carousel w-full h-[580px]">
             {/* <div className="carousel  h-[800px]"> */}
                 <div id="slide1" className="carousel-item relative w-full h-full">
                     <img 
