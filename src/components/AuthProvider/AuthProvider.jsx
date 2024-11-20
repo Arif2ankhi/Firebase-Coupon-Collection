@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
-import React, { createContext, useState } from 'react';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from 'react';
 import auth from '../../firebase/firebase.config';
 
 export const AuthContext = createContext(null)
@@ -20,25 +20,33 @@ const signInUser = (email, password) =>{
    return signInWithEmailAndPassword( auth, email, password);
 }
 
-onAuthStateChanged(auth, currentUser =>{
-    if(currentUser){
-        console.log('Currently logged in user:', currentUser);
-        setUser(currentUser);
-    }
-    else{
-        console.log('No user logged in');
-        setUser(null);
-    }
+const signOutUser = () =>{
+    return signOut(auth);
+}
 
-})
+useEffect(() =>{
+    const unSubscribe = onAuthStateChanged(auth, currentUser => {
+        console.log('current user', currentUser);
+       setUser(currentUser);    
+           
+    })
+
+    return () => {
+        unSubscribe();
+     } // cleanup function to unsubscribe when component unmounts
+
+},[])
     
 
 
 
 const authInfo = {
     name,
+    user,
     createUser,
     signInUser,
+    signOutUser,
+    
  };
 
 

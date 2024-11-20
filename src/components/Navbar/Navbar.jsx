@@ -1,17 +1,26 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
-  const {name} = useContext(AuthContext);
-  console.log(name);
+  const {user, signOutUser} = useContext(AuthContext);
+  console.log(user);
+const handleSignOut = () =>{
+  signOutUser()
+  .then(() =>{
+    console.log('user sign out successfully');
 
-  const navigate = useNavigate();
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
+  })
+  .catch(error =>console.log('ERROR', error.message))
+}
+
+
+  // const navigate = useNavigate();
+  // const handleLoginClick = () => {
+  //   navigate("/login");
+  // };
 
   const links = (
     <>
@@ -25,14 +34,14 @@ const Navbar = () => {
       <NavLink className="text-black font-bold ml-5" to="/aboutDev">
         About Dev
       </NavLink>
-      {/* <NavLink className="text-black font-bold ml-5" to="/register">
+      <NavLink className="text-black font-bold ml-5" to="/register">
         Register
-      </NavLink> */}
+      </NavLink>
     </>
   );
 
   return (
-    // <div className="navbar w-full mx-auto bg-blue-400 rounded-lg mt-2 mb-8 sticky top-0 z-50 ">
+   
     <div className="navbar bg-green-400 rounded-lg mt-2 mb-8 sticky top-0 z-50 ">
       <div className="navbar-start">
         <div className="dropdown">
@@ -69,7 +78,19 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button>
+      {
+                user? 
+                <>
+                
+                <span>{user.email}</span>
+                <a onClick={handleSignOut} className="btn btn-secondary">Sign Out</a>
+
+                </>
+                : <button className=" btn btn-primary">  <Link to="/login">Login</Link></button>
+            }
+
+        {/* <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button> */}
+        {/* <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button> */}
       </div>
     </div>
   );
