@@ -1,11 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import auth from "../../firebase/firebase.config";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
+
+   const {signInUser} =useContext(AuthContext) 
+
   const [success, setSuccess] = useState(false);
   const [logInError, setLogInError] = useState("");
   const emailRef = useRef();
@@ -16,6 +20,18 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    // signIn User 
+    signInUser(email, password)
+      .then(result => {
+        console.log(result.user);
+      })
+      .catch(error => {
+        console.log('Error', error.message);
+
+      })
+    
+
 
     setSuccess(false);
     setLogInError("");

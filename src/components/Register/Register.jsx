@@ -1,16 +1,19 @@
 
-import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
-import React, { useState } from "react";
+import { createUserWithEmailAndPassword,  updateProfile } from "firebase/auth";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebase.config";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 
 const Register = () => {
+
+  const {createUser} = useContext(AuthContext)
 
     const [success, setSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -53,7 +56,8 @@ const Register = () => {
       // Create user with email and password
   
       // createUserWithEmailAndPassword(auth, email, password)
-      createUserWithEmailAndPassword(auth, email, password)
+      // createUserWithEmailAndPassword(auth, email, password)
+      createUser(email, password)
         .then((result) => {
           console.log(result.user);
           setSuccess(true);
