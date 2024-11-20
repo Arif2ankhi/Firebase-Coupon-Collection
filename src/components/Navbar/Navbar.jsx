@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+  const {name} = useContext(AuthContext);
+  console.log(name);
 
   const navigate = useNavigate();
   const handleLoginClick = () => {
