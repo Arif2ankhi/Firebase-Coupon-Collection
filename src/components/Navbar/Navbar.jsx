@@ -1,7 +1,15 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
+
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
   const links = (
     <>
       <NavLink className="text-black font-bold" to="/">Home</NavLink>
@@ -14,6 +22,9 @@ const Navbar = () => {
       <NavLink className="text-black font-bold ml-5" to="/aboutDev">
         About Dev
       </NavLink>
+      {/* <NavLink className="text-black font-bold ml-5" to="/register">
+        Register
+      </NavLink> */}
     </>
   );
 
@@ -46,7 +57,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img
-          className="  w-[84px] h-[72px] text-2xl rounded-lg ml-4  "
+          className="  w-[96px] h-[84px] text-2xl rounded-lg ml-4  "
           src="../../../public/Images/logo.png"
           alt=""
         />
@@ -55,7 +66,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <button className="mr-4 btn btn-primary">Login</button>
+        <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button>
       </div>
     </div>
   );
