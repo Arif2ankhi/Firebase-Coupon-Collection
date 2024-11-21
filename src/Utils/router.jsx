@@ -37,15 +37,12 @@ const router = createBrowserRouter([
             loader: () => fetch("/service.json")
         },
         {
-            // path: "/brand/:id",
-            // element: <PrivateRoute><CouponPage /></PrivateRoute>,
-            // loader: () => fetch("/service.json") 
             path: "/brand/:id",
                 element: <PrivateRoute><CouponPage /></PrivateRoute>,
                 loader: async ({ params }) => {
-                    const response = await fetch("/service.json");  // Fetch full data
+                    const response = await fetch("/service.json");  
                     const data = await response.json();
-                    return data.find(brand => brand._id === params.id); // Find the specific brand
+                    return data.find(brand => brand._id === params.id); 
                 }
             
             

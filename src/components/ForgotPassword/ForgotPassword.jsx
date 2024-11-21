@@ -35,7 +35,7 @@ const ForgotPassword = () => {
       // Redirect to Gmail
       setTimeout(() => {
         window.location.href = "https://mail.google.com/";
-      }, 2000); 
+      }, 1000); 
     } catch (error) {
       console.error("Password reset error:", error);
       toast.error(`Error: ${error.message}`);
@@ -70,3 +70,4 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
