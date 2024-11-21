@@ -1,48 +1,71 @@
 import React, { useContext } from "react";
-import "./Navbar.css";
+// import "./Navbar.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-
 const Navbar = () => {
-  const {user, signOutUser} = useContext(AuthContext);
-  console.log(user);
-const handleSignOut = () =>{
-  signOutUser()
-  .then(() =>{
-    console.log('user sign out successfully');
+  const { user, signOutUser } = useContext(AuthContext);
+  // console.log(user);
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log("user sign out successfully");
+      })
+      .catch((error) => console.log("ERROR", error.message));
+  };
 
-  })
-  .catch(error =>console.log('ERROR', error.message))
-}
-
-
-  // const navigate = useNavigate();
-  // const handleLoginClick = () => {
-  //   navigate("/login");
-  // };
 
   const links = (
     <>
-      <NavLink className="text-black font-bold" to="/">Home</NavLink>
-      <NavLink className="text-black font-bold ml-5" to="/brands">
-        Brands
-      </NavLink>
-      <NavLink className="text-black font-bold ml-5" to="/myProfile">
-        My Profile
-      </NavLink>
-      <NavLink className="text-black font-bold ml-5" to="/aboutDev">
-        About Dev
-      </NavLink>
-      <NavLink className="text-black font-bold ml-5" to="/register">
-        Register
-      </NavLink>
+      <li>
+        <NavLink className="text-xl text-black font-bold" to="/">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-xl text-black font-bold ml-5" to="/brands">
+          Brands
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="text-xl text-black font-bold ml-5" to="/aboutDev">
+          About Dev
+        </NavLink>
+      </li>
+
+      {user && (
+        <>
+          <li>
+            <NavLink
+              className="text-xl text-black font-bold ml-5"
+              to="/myProfile"
+            >
+              My Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="text-xl text-black font-bold ml-5"
+              to="/updateProfile"
+            >
+              Update Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="text-xl text-black font-bold ml-5"
+              to="/brand/:_id"
+            >
+              Coupon
+            </NavLink>{" "}
+          </li>
+        </>
+      )}
     </>
   );
 
   return (
-   
-    <div className="navbar bg-green-400 rounded-lg mt-2 mb-8 sticky top-0 z-50 ">
+    <div className="navbar bg-red-800 rounded-lg mt-2 mb-8 sticky top-0 z-50 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +92,7 @@ const handleSignOut = () =>{
           </ul>
         </div>
         <img
-          className="  w-[96px] h-[84px] text-2xl rounded-lg ml-4  "
+          className="  w-[96px] h-[84px] text-2xl rounded-lg ml-4  animate__animated animate__flip animate__fast animate__animate__infinite"
           src="../../../public/Images/logo.png"
           alt=""
         />
@@ -78,19 +101,19 @@ const handleSignOut = () =>{
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-      {
-                user? 
-                <>
-                
-                <span>{user.email}</span>
-                <a onClick={handleSignOut} className="btn btn-secondary">Sign Out</a>
-
-                </>
-                : <button className=" btn btn-primary">  <Link to="/login">Login</Link></button>
-            }
-
-        {/* <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button> */}
-        {/* <button onClick={handleLoginClick} className="mr-4 btn btn-primary">Login</button> */}
+        {user ? (
+          <>
+            <span>{user.email}</span>
+            <a onClick={handleSignOut} className="btn btn-secondary">
+              Sign Out
+            </a>
+          </>
+        ) : (
+          <button className=" btn btn-primary">
+            {" "}
+            <Link to="/login">Login</Link>
+          </button>
+        )}
       </div>
     </div>
   );

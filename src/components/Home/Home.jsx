@@ -14,14 +14,11 @@ const Home = () => {
     <div className="w-11/12">
       <Banner></Banner>
       <section>
-        <div className="text-3xl font-extrabold justify-center text-center text-red-800 m-12">
+        <div className="text-3xl font-extrabold justify-center text-center text-red-800 m-12 animate__animated animate__bounce">
           Top Brands
         </div>
 
-        <Marquee
-          pauseOnHover={true}
-          speed={300}
-        >
+        <Marquee pauseOnHover={true} speed={300}>
           <div className="flex gap-12">
             {services.map((service) => (
               <img
@@ -37,7 +34,7 @@ const Home = () => {
       </section>
 
       <section>
-        <div className="text-3xl font-extrabold justify-center text-center  text-red-800 mt-6 p-8">
+        <div className="text-3xl font-extrabold justify-center text-center  text-red-800 mt-6 p-8 animate__animated animate__bounce animate__delay-2s">
           <button className="text-3xl font-extrabold text-center text-red-800 mt-8 mb-8">
             {/* {" "} */}
             Brands On Sell
@@ -69,20 +66,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section>
-  <h2 className="text-3xl font-extrabold text-center text-red-800 mt-8 mb-8">Top Rated Brands</h2>
-  <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-    {services
-      .filter((service) => service.rating >= 4.5)
-      .map((service) => (
-        <ServiceCard key={service._id} service={service} />
-      ))}
-  </div>
-</section> */}
       <section>
         <h2 className="text-3xl font-extrabold text-center text-red-800 mt-8 mb-8">
           Top Rated Brands
         </h2>
+        <p className="text-xl font-extrabold text-white text-center mt-4 mb-6 animate__animated animate__flip animate__fast animate__animate__infinite">
+          According to Rating{" "}
+        </p>
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {topRatedBrands.map((service) => (
             <ServiceCard key={service._id} service={service} />

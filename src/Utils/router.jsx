@@ -9,6 +9,10 @@ import ErrorPage from '../components/ErrorPage/ErrorPage';
 import BrandDetails from '../components/BrandDetails/BrandDetails';
 import Register from '../components/Register/Register';
 import Login from '../components/Login/Login';
+import UpdateProfile from '../components/UpdateProfile/UpdateProfile';
+import PrivateRoute from './routes/PrivateRoute';
+import CouponPage from '../components/CouponPage/CouponPage';
+import ForgotPassword from '../components/ForgotPassword/ForgotPassword';
 
 
 const router = createBrowserRouter([
@@ -33,9 +37,27 @@ const router = createBrowserRouter([
             loader: () => fetch("/service.json")
         },
         {
+            // path: "/brand/:id",
+            // element: <PrivateRoute><CouponPage /></PrivateRoute>,
+            // loader: () => fetch("/service.json") 
+            path: "/brand/:id",
+                element: <PrivateRoute><CouponPage /></PrivateRoute>,
+                loader: async ({ params }) => {
+                    const response = await fetch("/service.json");  // Fetch full data
+                    const data = await response.json();
+                    return data.find(brand => brand._id === params.id); // Find the specific brand
+                }
+            
+            
+          },
+
+        {
             path:"/myProfile",
-            element:<MyProfile></MyProfile>
+            element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>
         },
+        {
+            path:"/updateProfile",
+            element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>        },
         {
             path:"/aboutDev",
             element:<AboutDev></AboutDev>
@@ -47,6 +69,13 @@ const router = createBrowserRouter([
         {
             path:"/login",
             element:<Login></Login>
+        },
+        {
+            path:"/forgotPassword",
+            element:<ForgotPassword></ForgotPassword>
+        },
+        {
+            
         }
        ]
     }

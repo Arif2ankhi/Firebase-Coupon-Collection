@@ -1,57 +1,73 @@
-import React from 'react';
-import "./Banner.css"
+import React from "react";
+// import "./Banner.css";
 
 const Banner = () => {
-    return (
-        <div className='mx-auto'>
-            <div className="carousel w-full h-[580px]">
-            {/* <div className="carousel  h-[800px]"> */}
-                <div id="slide1" className="carousel-item relative w-full h-full">
-                    <img 
-                        src="https://thumbs.dreamstime.com/z/vector-gift-voucher-restaurant-discount-coupon-design-promo-code-certificate-template-online-shopping-marketing-flyer-137273441.jpg?ct=jpeg"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full h-full">
-                    <img
-                        // src="https://i.ibb.co/6g52Db4/ban2.webp"
-                        src="https://www.shutterstock.com/shutterstock/photos/2370371723/display_1500/stock-vector-halloween-special-sale-coupon-voucher-giveaway-frame-of-dark-forest-silhouette-with-tombstones-2370371723.jpg"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full h-full">
-                    <img
-                        // src="https://i.ibb.co/x6Vr86T/ban3.webp"
-                        src="https://thumbs.dreamstime.com/z/blue-p-309604545.jpg?ct=jpeg"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full h-full">
-                    <img
-                        // src="https://thumbs.dreamstime.com/z/vector-sale-labels-illustration-color-background-42444340.jpg?ct=jpeg"
-                        src="https://www.shutterstock.com/shutterstock/photos/2222438945/display_1500/stock-photo-black-friday-d-illustration-for-sale-and-golden-black-friday-text-with-a-classic-look-with-sale-2222438945.jpg"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="mx-auto w-11/12">
+      <div className="carousel w-full h-[580px]">
+        <div id="slide1" className="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/9ZkZtYJ/2.webp"
+            // className="w-full h-full object-cover"
+            className="w-full h-[300px] lg:h-[700px]" 
+          />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide4" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide2" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
         </div>
-    );
+        <div id="slide2" className="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/VxvbM1C/3.jpg"
+            // className="w-full h-full object-cover"
+            className="w-full h-[300px] lg:h-[700px]" 
+          />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide1" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide3" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/HrdM3fD/6.jpg"
+            // className="w-full h-full object-cover"
+            className="w-full h-[300px] lg:h-[700px]" 
+          />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide2" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide4" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full h-full">
+          <img
+            src="https://i.ibb.co/R4dGKD3/4.jpg"
+            // className="w-full h-full object-cover"
+            className="w-full h-[300px] lg:h-[700px]" 
+          />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide3" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide1" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;

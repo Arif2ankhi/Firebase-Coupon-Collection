@@ -1,0 +1,230 @@
+[
+    {
+      "_id": "1",
+      "brand_name": "Daraz",
+      "rating": 4.8,
+      "description": "Leading e-commerce platform in Bangladesh offering a wide range of products.",
+      "brand_logo": "https://i.ibb.co/rMMrQTd/Daraz.jpg",
+      "shop_link": "https://www.daraz.com.bd",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "DARAZ10",
+          "description": "Get 10% off on all products.",
+          "expiry_date": "2024-12-31",
+          "condition": "Minimum purchase 1000 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "2",
+      "brand_name": "Pickaboo",
+      "rating": 4.5,
+      "description": "An online marketplace for electronics and gadgets.",
+      "brand_logo": "https://i.ibb.co/pbNb8bg/picaaboo1.jpg",
+      "shop_link": "https://www.pickaboo.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "PICK5",
+          "description": "Get 5% off on electronics.",
+          "expiry_date": "2024-11-30",
+          "condition": "Minimum purchase 2000 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "3",
+      "brand_name": "Bagdoom",
+      "rating": 4.2,
+      "description": "A lifestyle e-commerce platform with trendy products.",
+      "brand_logo": "https://i.ibb.co/Lt3NXQH/bagdoom-1.jpg",
+      "shop_link": "https://www.bagdoom.com",
+      "category": "E-commerce",
+      "isSaleOn": false,
+      "coupons": []
+    },
+    {
+      "_id": "4",
+      "brand_name": "Ajkerdeal",
+      "rating": 4.3,
+      "description": "One of the oldest online marketplaces in Bangladesh.",
+      "brand_logo": "https://i.ibb.co/wJKtXCy/ajkerdeal.jpg",
+      "shop_link": "https://www.ajkerdeal.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "AJKER15",
+          "description": "Flat 15% discount on selected items.",
+          "expiry_date": "2024-12-31",
+          "condition": "Minimum purchase 500 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "5",
+      "brand_name": "Rokomari",
+      "rating": 4.9,
+      "description": "Online bookstore offering books, stationary, and gifts.",
+      "brand_logo": "https://i.ibb.co/WpMzk4B/rokomari.webp",
+      "shop_link": "https://www.rokomari.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "BOOK10",
+          "description": "10% off on all books.",
+          "expiry_date": "2024-06-30",
+          "condition": "Minimum purchase 300 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "6",
+      "brand_name": "Chaldal",
+      "rating": 4.7,
+      "description": "Online grocery store for fresh and packaged goods.",
+      "brand_logo": "https://i.ibb.co/3SpKZxP/chaldal.webp",
+      "shop_link": "https://www.chaldal.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "FRESH5",
+          "description": "5% off on fresh groceries.",
+          "expiry_date": "2024-05-15",
+          "condition": "Minimum purchase 1000 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "7",
+      "brand_name": "PriyoShop",
+      "rating": 4.4,
+      "description": "Online shopping destination for all types of products.",
+      "brand_logo": "https://i.ibb.co/njGNv96/priyoshop.jpg",
+      "shop_link": "https://www.priyoshop.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "PRIYO20",
+          "description": "20% off on fashion items.",
+          "expiry_date": "2024-04-30",
+          "condition": "Minimum purchase 1500 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "8",
+      "brand_name": "Othoba",
+      "rating": 4.6,
+      "description": "Online store featuring a variety of products for home and lifestyle.",
+      "brand_logo": "https://i.ibb.co/HKbqDzT/Othoba.jpg",
+      "shop_link": "https://www.othoba.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "OTHOBA50",
+          "description": "Flat 50 BDT off on first purchase.",
+          "expiry_date": "2024-12-31",
+          "condition": "Minimum purchase 500 BDT",
+          "coupon_type": "Flat"
+        }
+      ]
+    },
+    {
+      "_id": "9",
+      "brand_name": "Shadmart",
+      "rating": 4.1,
+      "description": "Online store specializing in affordable products from global brands.",
+      "brand_logo": "https://i.ibb.co/JmwD7vy/shadmart.webp",
+      "shop_link": "https://www.shadmart.com",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "SHAD10",
+          "description": "10% off for new users.",
+          "expiry_date": "2024-09-30",
+          "condition": "Minimum purchase 1000 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "10",
+      "brand_name": "Evaly",
+      "rating": 4.0,
+      "description": "Emerging e-commerce platform with a focus on discounts.",
+      "brand_logo": "https://i.ibb.co/4KB9QNn/evally.png",
+      "shop_link": "https://www.evaly.com.bd",
+      "category": "E-commerce",
+      "isSaleOn": false,
+      "coupons": []
+    },
+    {
+      "_id": "11",
+      "brand_name": "Bikroy",
+      "rating": 4.3,
+      "description": "Bangladesh's largest classifieds marketplace for new and used items.",
+      "brand_logo": "https://i.ibb.co/XtY0SSN/Bikroy.png",
+      "shop_link": "https://www.bikroy.com",
+      "category": "E-commerce",
+      "isSaleOn": false,
+      "coupons": []
+    },
+    {
+      "_id": "12",
+      "brand_name": "ClickBD",
+      "rating": 4.2,
+      "description": "Online marketplace offering a wide range of products.",
+      "brand_logo": "https://i.ibb.co/RPbFG3w/clickbd.png",
+      "shop_link": "https://www.clickbd.com",
+      "category": "E-commerce",
+      "isSaleOn": false,
+      "coupons": []
+    },
+    {
+      "_id": "13",
+      "brand_name": "Qcoom",
+      "rating": 4.0,
+      "description": "Emerging e-commerce platform in Bangladesh.",
+      "brand_logo": "https://i.ibb.co/74PNLG5/qcoom.jpg",
+      "shop_link": "https://www.qcoom.com",
+      "category": "E-commerce",
+      "isSaleOn": false,
+      "coupons": []
+    },
+    {
+      "_id": "14",
+      "brand_name": "Foodpanda",
+      "rating": 4.8,
+      "description": "Food delivery service with e-commerce features for groceries.",
+      "brand_logo": "https://i.ibb.co/GWTk7xb/foodpanda1.png",
+      "shop_link": "https://www.foodpanda.com.bd",
+      "category": "E-commerce",
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "FOOD20",
+          "description": "20% off on first order.",
+          "expiry_date": "2024-07-31",
+          "condition": "Minimum purchase 300 BDT",
+          "coupon_type": "Percentage"
+        }
+      ]
+    }
+
+]
+    

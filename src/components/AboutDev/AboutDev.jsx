@@ -2,8 +2,8 @@ import React from 'react';
 
 const AboutDev = () => {
     return (
-        <div>
-            About Dev 
+        <div className='text-2xl font-bold text-white justify-center text-center'>
+          Optional: Nothing to show in this section 
         </div>
     );
 };

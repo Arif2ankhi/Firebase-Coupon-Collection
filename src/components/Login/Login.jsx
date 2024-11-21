@@ -1,38 +1,41 @@
 import React, { useContext, useRef, useState } from "react";
 import auth from "../../firebase/firebase.config";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-
-   const {signInUser} =useContext(AuthContext) 
+ 
+  const navigate = useNavigate();
+   const {signInUser, signInWithGoogle} =useContext(AuthContext);
 
   const [success, setSuccess] = useState(false);
   const [logInError, setLogInError] = useState("");
   const emailRef = useRef();
-  const navigate = useNavigate();
+  
 
   const handleLogIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+   
+   
 
     // signIn User 
     signInUser(email, password)
       .then(result => {
         console.log(result.user);
+        e.target.reset();
+        navigate("/"); 
+        
       })
       .catch(error => {
         console.log('Error', error.message);
 
       })
     
-
-
     setSuccess(false);
     setLogInError("");
 
@@ -50,44 +53,31 @@ const Login = () => {
       setLogInError(error.message);
       toast.error("Login failed. Please check your credentials.");
     });
-    // signInWithEmailAndPassword(auth, email, password)
-    //   .then((result) => {
-    //     console.log(result.user);
-    //     if(!result.user.emailVerified) {
-    //         setLogInError(" Please verify your email address.");
-    //     }
-    //     else{
-    //         setSuccess(true);
-    //     }
-        
-    //   })
-    
-
-    //   .catch((error) => {
-    //     console.log("Error", error.message);
-    //     setLogInError(error.message);
-    //   });
+   
   };
 
+  // Forgot Password info 
 
- const  handleForgetPassword = () => {
-    console.log("get me email address.", emailRef.current.value);
-    const email = emailRef.current.value;
-    if(!email){
-        console.log('Please provide a valid email address');
+  const handleForgetPassword = () => {
+    const email = emailRef.current?.value || "";
+  
+    if (!email) {
+      toast.error("Please provide your email address.");
+      return;
     }
-    else{
-        sendPasswordResetEmail(auth, email)
-        .then(() => {
-            // alert('Password reset email sent successfully. Please check your inbox.');
-            toast.error('Password reset email sent successfully. Please check your inbox.');
-
-        })
-    }
+  
+    navigate("/forgotPassword", { state: { email } });
   };
+  
+  const handleGoogleSignIn =()=>{
+    signInWithGoogle()
+   .then(result => {
+    console.log(result.user);
+    navigate('/');
 
-
-//  };
+   })
+   .catch(error => console.log('ERROR',error.message))
+  }
 
   return (
   
@@ -123,17 +113,25 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label onClick={handleForgetPassword} className="label">
+              {/* <label onClick={handleForgetPassword} className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
-              </label>
+              </label> */}
+              <label className="label">
+  <span onClick={handleForgetPassword} className="label-text-alt link link-hover">
+    Forgot password?
+  </span>
+</label>
+
+
+
             </div>
             <div className="form-control mt-6">
-              <div className="btn-secondary space-x-8">
-              <button className="btn btn-primary text-2xl font-bold">Login</button>
-              <button className="btn btn-secondary text-2xl font-bold">Google</button>
-              </div>
+              {/* <div className="btn-secondary space-x-8"> */}
+              <button className="btn btn-primary text-2xl font-bold mb-4">Login</button>
+              <button onClick={handleGoogleSignIn} className="btn btn-secondary bg-red-300 text-2xl font-bold mt-4">Signin With Google</button>
+              {/* </div> */}
             </div>
 
           </form>

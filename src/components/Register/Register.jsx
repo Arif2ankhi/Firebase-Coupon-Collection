@@ -53,10 +53,7 @@ const Register = () => {
         return;
       }
   
-      // Create user with email and password
-  
-      // createUserWithEmailAndPassword(auth, email, password)
-      // createUserWithEmailAndPassword(auth, email, password)
+      // create user 
       createUser(email, password)
         .then((result) => {
           console.log(result.user);
@@ -89,10 +86,7 @@ const Register = () => {
               console.error("Profile update error:", error.message);
               setErrorMessage(error.message);
             });
-          // .catch(error => console.log('User profile update error'))
-          // .catch((error) => {
-          //   console.error("Profile update error:", error.message);
-          //   setErrorMessage(error.message);
+         
   
         })
         .catch((error) => {
@@ -101,10 +95,6 @@ const Register = () => {
           toast.error("Registration failed. Please try again.");
   
   
-        // .catch((error) => {
-        //   console.log("ERROR", error.message);
-        //   setErrorMessage(error.message);
-        //   setSuccess(false);
         });
     };
   
