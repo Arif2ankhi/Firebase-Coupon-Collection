@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 // import "./Navbar.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -13,7 +14,6 @@ const Navbar = () => {
       })
       .catch((error) => console.log("ERROR", error.message));
   };
-
 
   const links = (
     <>
@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
         <img
           className="  w-[96px] h-[84px] text-2xl rounded-lg ml-4  animate__animated animate__flip animate__fast animate__animate__infinite"
-          src="../../../public/Images/logo.png"
+          src={logo}
           alt=""
         />
       </div>
