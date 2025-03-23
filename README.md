@@ -29,6 +29,10 @@ Selection Category: User have options to select their disarable discounted produ
 ### Private link:
  https://github.com/programming-hero-web-course1/b10-a9-authentication-Arif2ankhi/blob/main/README.md
 
+ ### Public repo link :
+
+ https://github.com/Arif2ankhi/Firebase-Coupon-Collection/tree/main 
+
 ## Project live link:
 
 https://app.netlify.com/sites/coupon-collection-pro/overview
